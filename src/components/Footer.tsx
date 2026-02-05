@@ -115,7 +115,7 @@ const Footer = () => {
           </p>
           
           <p className="font-body text-sm text-primary-foreground/60 flex items-center gap-1">
-            Built and designed with <Heart className="w-4 h-4 text-gold fill-gold" /> by{" "}
+            Built and designed by{" "}
             <a
               href="https://www.linkedin.com/in/simon-akuien-atem-710895290/"
               target="_blank"
@@ -123,7 +123,6 @@ const Footer = () => {
               className="text-primary hover:text-gold transition-colors inline-flex items-center gap-1 font-medium"
             >
               Simon Akuien Atem
-              <ExternalLink className="w-3 h-3" />
             </a>
           </p>
         </motion.div>

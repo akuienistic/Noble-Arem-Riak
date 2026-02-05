@@ -9,6 +9,7 @@ import Initiatives from "@/components/Initiatives";
 import Impact from "@/components/Impact";
 import Recognition from "@/components/Recognition";
 import Vision from "@/components/Vision";
+import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -40,6 +41,7 @@ const Index = () => {
             <Impact />
             <Recognition />
             <Vision />
+            <Contact />
           </main>
           <Footer />
         </div>

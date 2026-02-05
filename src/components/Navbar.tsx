@@ -1,16 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import {
-  Home,
-  User,
-  GraduationCap,
-  Briefcase,
-  Heart,
-  Award,
-  Eye,
-  Menu,
-  X,
-} from "lucide-react";
+import { Home, User, GraduationCap, Briefcase, Heart, Award, Eye, Menu, X, MessageCircle } from "lucide-react";
 
 const navItems = [
   { label: "Home", href: "#home", icon: Home },
@@ -29,6 +19,20 @@ const Navbar = () => {
     setIsOpen(false);
     const element = document.querySelector(href);
     element?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const scrollToContact = () => {
+    setIsOpen(false);
+    const element = document.querySelector("#contact");
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    } else {
+      // If contact section doesn't exist, show alert or create one
+      const contactSection = document.createElement("section");
+      contactSection.id = "contact";
+      document.body.appendChild(contactSection);
+      contactSection.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
   return (
@@ -52,7 +56,7 @@ const Navbar = () => {
                 Noble<span className="text-primary">.</span>
               </motion.a>
 
-              {/* Nav Items */}
+              {/* Centered Nav Items */}
               <div className="flex items-center gap-8">
                 {navItems.map((item) => (
                   <motion.button
@@ -66,6 +70,17 @@ const Navbar = () => {
                   </motion.button>
                 ))}
               </div>
+
+              {/* Contact Button */}
+              <motion.button
+                onClick={scrollToContact}
+                className="flex items-center gap-2 px-6 py-2.5 bg-primary text-primary-foreground rounded-full font-body text-sm font-medium hover:bg-primary/90 transition-colors"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <MessageCircle className="w-4 h-4" />
+                Contact
+              </motion.button>
             </div>
           </div>
         </div>
@@ -117,7 +132,7 @@ const Navbar = () => {
                   transition={{ delay: 0.2 }}
                 >
                   <span className="font-heading text-xl font-bold text-primary-foreground">
-                    Noble Arem Riak
+                    Noble<span className="text-primary">.</span>
                   </span>
                 </motion.div>
 
@@ -136,6 +151,18 @@ const Navbar = () => {
                       {item.label}
                     </motion.button>
                   ))}
+
+                  {/* Mobile Contact Button */}
+                  <motion.button
+                    onClick={scrollToContact}
+                    className="flex items-center gap-3 px-4 py-3 mt-4 rounded-lg bg-primary text-primary-foreground font-body text-sm font-medium"
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.1 + navItems.length * 0.05 }}
+                  >
+                    <MessageCircle className="w-5 h-5" />
+                    Contact
+                  </motion.button>
                 </div>
               </div>
             </motion.div>
