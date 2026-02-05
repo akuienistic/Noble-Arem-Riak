@@ -131,40 +131,6 @@ const Initiatives = () => {
             </motion.div>
           ))}
         </div>
-
-        {/* Timeline */}
-        <motion.div
-          className="mt-16 p-8 rounded-2xl gradient-hero"
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.5 }}
-        >
-          <h3 className="font-heading text-2xl font-bold text-primary-foreground mb-6 text-center">
-            Timeline of Achievements
-          </h3>
-          <div className="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-16">
-            {[
-              { year: "2018", event: "Founded Darling Wisdom Academy" },
-              { year: "2024", event: "Launched Amonto Girls Academy" },
-            ].map((item, index) => (
-              <div key={item.year} className="flex items-center gap-4">
-                <div className="w-16 h-16 rounded-full gradient-gold flex items-center justify-center shadow-lg">
-                  <span className="font-heading text-lg font-bold text-accent-foreground">
-                    {item.year}
-                  </span>
-                </div>
-                <div>
-                  <p className="font-body text-primary-foreground">
-                    {item.event}
-                  </p>
-                </div>
-                {index === 0 && (
-                  <div className="hidden md:block w-24 h-px bg-primary/50" />
-                )}
-              </div>
-            ))}
-          </div>
-        </motion.div>
       </div>
     </section>
   );

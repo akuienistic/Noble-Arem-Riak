@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ChevronDown, Award, School, BookOpen } from "lucide-react";
+import { ChevronDown, Award, School, BookOpen, ArrowRight, User } from "lucide-react";
 import nobleProfile from "@/assets/noble-profile.jpg";
 
 const Hero = () => {
@@ -138,18 +138,20 @@ const Hero = () => {
             >
               <motion.a
                 href="#initiatives"
-                className="px-6 lg:px-8 py-3 lg:py-4 rounded-full font-body font-semibold text-sm bg-primary text-primary-foreground hover:bg-primary/90 transition-colors shadow-lg shadow-primary/30"
+                className="inline-flex items-center gap-2 px-6 lg:px-8 py-3 lg:py-4 rounded-full font-body font-semibold text-sm bg-primary text-primary-foreground hover:bg-primary/90 transition-colors shadow-lg shadow-primary/30"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
                 Explore My Work
+                <ArrowRight className="w-4 h-4" />
               </motion.a>
               <motion.a
                 href="#about"
-                className="px-6 lg:px-8 py-3 lg:py-4 rounded-full font-body font-semibold text-sm border-2 border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 transition-colors"
+                className="inline-flex items-center gap-2 px-6 lg:px-8 py-3 lg:py-4 rounded-full font-body font-semibold text-sm border-2 border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 transition-colors"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
+                <User className="w-4 h-4" />
                 Learn More
               </motion.a>
             </motion.div>
@@ -208,26 +210,6 @@ const Hero = () => {
           </motion.div>
         </div>
       </div>
-
-      {/* Scroll indicator */}
-      <motion.div
-        className="absolute bottom-8 left-1/2 -translate-x-1/2"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 2 }}
-      >
-        <motion.div
-          className="w-6 h-10 rounded-full border-2 border-primary-foreground/30 flex items-start justify-center p-2"
-          animate={{ y: [0, 5, 0] }}
-          transition={{ duration: 1.5, repeat: Infinity }}
-        >
-          <motion.div
-            className="w-1.5 h-1.5 rounded-full bg-primary-foreground/60"
-            animate={{ y: [0, 8, 0] }}
-            transition={{ duration: 1.5, repeat: Infinity }}
-          />
-        </motion.div>
-      </motion.div>
     </section>
   );
 };

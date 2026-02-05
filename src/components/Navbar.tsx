@@ -86,6 +86,17 @@ const Navbar = () => {
         </div>
       </motion.nav>
 
+      {/* Mobile Logo */}
+      <motion.a
+        href="#home"
+        className="fixed top-4 left-4 z-50 lg:hidden font-heading text-xl font-bold text-primary-foreground"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.2 }}
+      >
+        Noble<span className="text-primary">.</span>
+      </motion.a>
+
       {/* Mobile Menu Button */}
       <motion.button
         className="fixed top-4 right-4 z-50 lg:hidden p-3 rounded-full gradient-hero shadow-lg border border-primary/30"
